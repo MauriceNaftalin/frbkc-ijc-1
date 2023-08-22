@@ -10,30 +10,27 @@ class CompanyTest {
 
     private Company company;
 
-    @Disabled
     @BeforeEach
     void setUp() {
-//        company= new Company(CompanyData.getEmployees());
+        company= new Company(CompanyData.getEmployees());
     }
 
-    @Disabled
     @Test
     void highestPaid() {
+        assertEquals(new Employee("Darth Vader", 9654), company.highestPaid());
 //        assertEquals("Darth Vader", company.highestPaid().getName());
     }
 
-    @Disabled
     @Test
     void testGetEmployees() {
-//        assertArrayEquals(CompanyData.getEmployees(), company.getEmployees());
+        assertArrayEquals(CompanyData.getEmployees(), company.getEmployees());
     }
 
-    @Disabled
     @Test
     void testGetEmployeesEarningLessThan() {
-//        final Employee[] employees = company.getEmployees();
-//        Employee[] expected = {employees[1],employees[2], null, null, null, null, null};
-//        assertArrayEquals(expected, company.getLowPaidEmployees(3000));
+        final Employee[] employees = company.getEmployees();
+        Employee[] expected = {employees[1],employees[2], null, null, null, null, null};
+        assertArrayEquals(expected, company.getLowPaidEmployees(3000));
     }
 
     @Disabled

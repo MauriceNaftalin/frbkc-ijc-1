@@ -5,7 +5,7 @@ public class ConsoleApp {
 
     public static void main(String[] args) {
         // fake the creation of a Company from database data
-        Company company = null; // new Company(CompanyData.getEmployees());
+        Company company = new Company(CompanyData.getEmployees());
 
         // get user input to provide choice of operations
         var scanner = new Scanner(System.in);
@@ -14,7 +14,9 @@ public class ConsoleApp {
         while (option != 'z') {
             if (option == 'a') {
                 // list all employees
-                System.out.println("not implemented yet");
+                for (Employee el : company.getEmployees()) {
+                    System.out.println(el);
+                }
             } else if (option == 'b') {
                 // print the highest salary using the result from a new method Company::highestPaid
                 System.out.println("not implemented yet");
