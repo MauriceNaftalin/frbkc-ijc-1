@@ -15,7 +15,7 @@ class CompanyTest {
 
     @BeforeEach
     void setUp() {
-        company= new Company(CompanyData.getEmployees());
+        company= new Company(CompanyData.getEmployees(), CompanyData.getDepartmentDirectory());
     }
 
     @Test
@@ -51,4 +51,6 @@ class CompanyTest {
 //        List<Employee> firstTwo = {employees[0],employees[1], null, null, null, null, null};
 //        assertArrayEquals(firstTwo, company.getFirstFew(2));
     }
+
+
 }

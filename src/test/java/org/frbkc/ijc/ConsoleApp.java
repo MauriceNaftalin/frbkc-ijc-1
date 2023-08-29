@@ -5,7 +5,7 @@ public class ConsoleApp {
 
     public static void main(String[] args) {
         // fake the creation of a Company from database data
-        Company company = new Company(CompanyData.getEmployees());
+        Company company = new Company(CompanyData.getEmployees(), CompanyData.getDepartmentDirectory());
 
         // get user input to provide choice of operations
         var scanner = new Scanner(System.in);
