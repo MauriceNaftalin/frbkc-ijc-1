@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CompanyTest {
@@ -23,14 +26,14 @@ class CompanyTest {
 
     @Test
     void testGetEmployees() {
-        assertArrayEquals(CompanyData.getEmployees(), company.getEmployees());
+        assertEquals(CompanyData.getEmployees(), company.getEmployees());
     }
 
     @Test
     void testGetEmployeesEarningLessThan() {
-        final Employee[] employees = company.getEmployees();
-        Employee[] expected = {employees[1],employees[2], null, null, null, null, null};
-        assertArrayEquals(expected, company.getLowPaidEmployees(3000));
+        final List<Employee> employees = company.getEmployees();
+        List<Employee> expected = employees.subList(1,3);
+        assertEquals(expected, company.getLowPaidEmployees(3000));
     }
 
     @Disabled
@@ -44,8 +47,8 @@ class CompanyTest {
     @Disabled
     @Test
     void testgetFirstFew() {
-//        final Employee[] employees = company.getEmployees();
-//        Employee[] firstTwo = {employees[0],employees[1], null, null, null, null, null};
+//        final List<Employee> employees = company.getEmployees();
+//        List<Employee> firstTwo = {employees[0],employees[1], null, null, null, null, null};
 //        assertArrayEquals(firstTwo, company.getFirstFew(2));
     }
 }

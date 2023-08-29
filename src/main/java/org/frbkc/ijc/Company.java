@@ -1,18 +1,21 @@
 package org.frbkc.ijc;
 
-public class Company {
-    private Employee[] employees;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Company(Employee[] employees) {
+public class Company {
+    private List<Employee> employees;
+
+    public Company(List<Employee> employees) {
         this.employees = employees;
     }
 
-    public Employee[] getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
     public Employee highestPaid() {
-        Employee highestFoundSoFar = employees[0];
+        Employee highestFoundSoFar = employees.get(0);
         for (Employee e : employees) {
             if (e.getSalary() > highestFoundSoFar.getSalary()){
                 highestFoundSoFar = e;
@@ -21,15 +24,13 @@ public class Company {
         return highestFoundSoFar;
     }
 
-    public Employee[] getLowPaidEmployees(int salary) {
-        Employee[] returnArray = new Employee[employees.length];
-        int countSoFar = 0;
+    public List<Employee> getLowPaidEmployees(int salary) {
+        List<Employee> returnList = new ArrayList<>();
         for (Employee e : employees) {
             if (e.getSalary() < salary) {
-                returnArray[countSoFar] = e;
-                countSoFar = countSoFar + 1;
+                returnList.add(e);
             }
         }
-        return returnArray;
+        return returnList;
     }
 }

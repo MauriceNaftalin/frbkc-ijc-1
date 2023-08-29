@@ -49,7 +49,7 @@ public class ConsoleApp {
                 System.out.print("Salary: ");
                 int salary = scanner.nextInt();
                 scanner.nextLine();
-//                final Employee[] employeesEarningLessThan = company.getLowPaidEmployees(salary);
+//                final List<Employee> employeesEarningLessThan = company.getLowPaidEmployees(salary);
                 System.out.println("not implemented yet");
             } else if (option == 'h') {
                 // list the company's employees in reverse order
