@@ -26,7 +26,10 @@ class CompanyTest {
 
     @Test
     void testGetEmployees() {
-        assertEquals(CompanyData.getEmployees(), company.getEmployees());
+        final List<Employee> expectedEmployees = CompanyData.getEmployees();
+        final List<Employee> actualEmployees = company.getEmployees();
+        assertEquals(expectedEmployees.size(), actualEmployees.size());
+        assertEquals(expectedEmployees, actualEmployees);
     }
 
     @Test
@@ -52,5 +55,10 @@ class CompanyTest {
 //        assertArrayEquals(firstTwo, company.getFirstFew(2));
     }
 
-
+    @Test
+    void testLookUpEmployee() {
+        assertTrue(company.isEmployee("Mohan Solay", 4523));
+        assertTrue(company.isEmployee("Tom Cruise", 8350));
+        assertFalse(company.isEmployee("Tom Cruise", 83500));
+    }
 }

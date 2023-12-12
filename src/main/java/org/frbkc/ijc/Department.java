@@ -2,7 +2,7 @@ package org.frbkc.ijc;
 
 import java.util.Objects;
 
-public class Department {
+public class Department implements OrgUnit {
 
     private String name;
 
